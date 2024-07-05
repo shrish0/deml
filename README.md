@@ -9,7 +9,6 @@
 - [Usage](#usage)
 - [Database Setup](#database-setup)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 This is a simple e-commerce platform built using .NET for the backend and SQL Server for the database. It provides a range of functionalities to manage products, orders, and users.
@@ -89,8 +88,3 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
      ```bash
      dotnet ef database update
      ```
-e MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README file as per your project’s specifics and add any additional details that might be helpful for users and contributors.
