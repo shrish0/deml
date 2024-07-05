@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "deml", "deml\deml.csproj", "{37FE8312-8255-4DE8-8483-2185E15DA818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37FE8312-8255-4DE8-8483-2185E15DA818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FE8312-8255-4DE8-8483-2185E15DA818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FE8312-8255-4DE8-8483-2185E15DA818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FE8312-8255-4DE8-8483-2185E15DA818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EA6C151-D22B-4BB2-907E-A66325F1412B}
+	EndGlobalSection
+EndGlobal
