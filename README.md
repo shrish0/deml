@@ -89,26 +89,7 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
      ```bash
      dotnet ef database update
      ```
-
-## Contributing
-
-1. **Fork the Repository**
-2. **Create a Feature Branch:**
-    ```bash
-    git checkout -b feature/YourFeature
-    ```
-3. **Commit Your Changes:**
-    ```bash
-    git commit -m 'Add some feature'
-    ```
-4. **Push to the Branch:**
-    ```bash
-    git push origin feature/YourFeature
-    ```
-5. **Open a Pull Request**
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+e MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
