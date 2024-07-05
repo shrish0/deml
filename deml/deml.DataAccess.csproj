@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="deml.DataAccess.csproj" />
+    <None Include="deml.utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\deml.DataAccess\deml.DataAccess.csproj" />
-    <ProjectReference Include="..\deml.DataAccess\deml.utility.csproj" />
     <ProjectReference Include="..\deml.Models\deml.Models.csproj" />
-    <ProjectReference Include="..\deml.utility\deml.utility.csproj" />
   </ItemGroup>
 
 </Project>

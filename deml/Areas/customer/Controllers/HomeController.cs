@@ -2,8 +2,9 @@ using deml.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace deml.Controllers
+namespace demlWEB.Areas.customer.Controllers
 {
+    [Area("customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

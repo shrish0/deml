@@ -1,19 +1,22 @@
-﻿using deml.Data;
+﻿
+
 using deml.Models;
 using Microsoft.AspNetCore.Mvc;
+using deml.DataAccess.Repository.IRepository;
 
-namespace deml.Controllers
+namespace demlWEB.Areas.admin.Controllers
 {
+    [Area("admin")]
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        private readonly ICategoryRepository _categoryRepo;
+        public CategoryController(ICategoryRepository categoryRepo)
         {
-            _db = db;
+            _categoryRepo = categoryRepo;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
+            List<Category> objCategoryList = _categoryRepo.GetAll();
             return View(objCategoryList);
         }
 
@@ -35,8 +38,8 @@ namespace deml.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _category.Add(obj);
+                _category.Save();
                 TempData["success"] = "created successfully";
                 return RedirectToAction("Index");
             }
@@ -46,20 +49,24 @@ namespace deml.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if (id == null || id==0 ) { 
-                return NotFound();
+            if (id == null || id == 0)
+            {
+                TempData["error"] = "no such category";
+                return RedirectToAction("Index");
             }
             //only for primary key
-            Category? categoryFromDb1 = _db.Categories.Find(id);
+            Category? categoryFromDb1 = _category.Get(u => u.CategoryId == id);
 
             //for ANY KEY
             //Category categoryFromDb2 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
             //for list and then filtering
             //Category categoryFromDb3 = _db.Categories.Where(u => u.CategoryId == id).FirstOrDefault();
 
-            if (categoryFromDb1 == null )
+            if (categoryFromDb1 == null)
             {
-                return NotFound();
+                TempData["error"] = "no such category";
+                return RedirectToAction("Index");
+
             }
             return View(categoryFromDb1);
         }
@@ -72,20 +79,20 @@ namespace deml.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _category.Update(obj);
+                _category.Save();
                 TempData["success"] = "Edit successfully";
                 return RedirectToAction("Index");
             }
-           
+
             return View();
         }
 
         public IActionResult Delete(int? id)
         {
-            
+
             //only for primary key
-            Category? categoryFromDb1 = _db.Categories.Find(id);
+            Category? categoryFromDb1 = _category.Get(u => u.CategoryId == id);
 
             //for ANY KEY
             //Category categoryFromDb2 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
@@ -94,22 +101,25 @@ namespace deml.Controllers
 
             if (categoryFromDb1 == null)
             {
-                return NotFound();
+                TempData["error"] = "no such category";
+                return RedirectToAction("Index");
             }
             return View(categoryFromDb1);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int id)
         {
-     
-            Category? obj = _db.Categories.Find(id);
-            if (obj == null) {
-                return NotFound();
+
+            Category? obj = _category.Get(u => u.CategoryId == id);
+            if (obj == null)
+            {
+                TempData["error"] = "no such category";
+                return RedirectToAction("Index");
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Remove(obj);
-                _db.SaveChanges();
+                _category.Remove(obj);
+                _category.Save();
                 TempData["success"] = "Deletes successfully";
                 return RedirectToAction("Index");
             }

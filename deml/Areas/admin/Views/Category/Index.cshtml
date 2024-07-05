@@ -1,0 +1,59 @@
+﻿@model List<Category>
+<partial name="_Notification" />
+<div class="card shadow m-4 border-0">
+    <div class="card-header bg-secondary bg-gradient m-lg-0 py-3 ">
+        <div class="row">
+            <div class=" text-center col-12">
+                <h2 class="text-white">
+                    Category list
+                </h2>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="row mb-4">
+            <div class="col-12 text-end">
+                <a asp-controller="Category" asp-action="Create" class=" btn btn-primary"><i class="bi bi-patch-plus"></i>Create new category</a>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        category name
+                    </th>
+                    <th>
+                        display sorder
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.OrderBy(o => o.DisplayOrder))
+                {
+                    <tr>
+                        <td>@obj.name</td>
+                        <td>@obj.DisplayOrder</td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Category" asp-action="Edit" asp-route-id=@obj.CategoryId class="btn btn-primary mx-2">
+                                    <i class="bi bi-pen"></i> edit
+                                </a>
+                                <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.CategoryId" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
