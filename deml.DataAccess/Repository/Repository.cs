@@ -27,7 +27,7 @@ namespace deml.DataAccess.Repository
             IQueryable<T> query = dbSet;
             return query.ToList();
         }
-        public void Create(T obj)
+        public void Add(T obj)
         {
            dbSet.Add(obj);
         }

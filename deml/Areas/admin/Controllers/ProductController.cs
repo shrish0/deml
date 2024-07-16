@@ -1,8 +1,6 @@
 ﻿using deml.DataAccess.Repository.IRepository;
 using deml.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace demlWEB.Areas.admin.Controllers
 {
@@ -104,7 +102,7 @@ namespace demlWEB.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            _Product.Remove(obj);
+            _Product.Delete(obj);
             _Product.Save();
             TempData["success"] = "Product deleted successfully";
             return RedirectToAction("Index");

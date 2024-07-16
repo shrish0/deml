@@ -11,7 +11,7 @@ namespace deml.DataAccess.Repository.IRepository
     {
         public IEnumerable<T> GetAll();
         public T Get(Expression<Func<T,bool>> filter);
-        public void Create(T obj);
+        public void Add(T obj);
        
         public void Delete(T obj);
         public void DeleteAll(IEnumerable<T> obj);

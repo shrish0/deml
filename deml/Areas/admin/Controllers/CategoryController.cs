@@ -16,7 +16,7 @@ namespace demlWEB.Areas.admin.Controllers
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _categoryRepo.GetAll();
+            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -38,8 +38,8 @@ namespace demlWEB.Areas.admin.Controllers
             }
             if (ModelState.IsValid)
             {
-                _category.Add(obj);
-                _category.Save();
+                _categoryRepo.Add(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "created successfully";
                 return RedirectToAction("Index");
             }
@@ -55,7 +55,7 @@ namespace demlWEB.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
             //only for primary key
-            Category? categoryFromDb1 = _category.Get(u => u.CategoryId == id);
+            Category? categoryFromDb1 = _categoryRepo.Get(u => u.CategoryId == id);
 
             //for ANY KEY
             //Category categoryFromDb2 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
@@ -79,8 +79,8 @@ namespace demlWEB.Areas.admin.Controllers
             }
             if (ModelState.IsValid)
             {
-                _category.Update(obj);
-                _category.Save();
+                _categoryRepo.Update(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Edit successfully";
                 return RedirectToAction("Index");
             }
@@ -92,7 +92,7 @@ namespace demlWEB.Areas.admin.Controllers
         {
 
             //only for primary key
-            Category? categoryFromDb1 = _category.Get(u => u.CategoryId == id);
+            Category? categoryFromDb1 = _categoryRepo.Get(u => u.CategoryId == id);
 
             //for ANY KEY
             //Category categoryFromDb2 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
@@ -110,7 +110,7 @@ namespace demlWEB.Areas.admin.Controllers
         public IActionResult DeletePOST(int id)
         {
 
-            Category? obj = _category.Get(u => u.CategoryId == id);
+            Category? obj = _categoryRepo.Get(u => u.CategoryId == id);
             if (obj == null)
             {
                 TempData["error"] = "no such category";
@@ -118,8 +118,8 @@ namespace demlWEB.Areas.admin.Controllers
             }
             if (ModelState.IsValid)
             {
-                _category.Remove(obj);
-                _category.Save();
+                _categoryRepo.Delete(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Deletes successfully";
                 return RedirectToAction("Index");
             }

@@ -17,12 +17,12 @@ namespace deml.DataAccess.Repository
             _db = db;
         }
 
-        public void update(Category obj)
+        public void Update(Category obj)
         {
             _db.Categories.Update(obj);
         }
 
-        public void save()
+        public void Save()
         {
             _db.SaveChanges();
         }

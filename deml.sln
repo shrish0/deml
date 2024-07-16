@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "deml", "deml\deml.csproj", "{37FE8312-8255-4DE8-8483-2185E15DA818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demlWEB", "deml\demlWEB.csproj", "{37FE8312-8255-4DE8-8483-2185E15DA818}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "deml.Models", "deml.Models\deml.Models.csproj", "{EB26DA8A-618C-4DD9-987B-06504567F4BB}"
 EndProject

@@ -6,8 +6,9 @@
     <title>@ViewData["Title"] - deml</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/deml.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/demlWEB.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
 <body>
     <header>
@@ -24,11 +25,24 @@
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            <a class="nav-link " asp-area="admin" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle bg-primary " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="admin" asp-controller="Category" asp-action="Index">Category</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="admin" asp-controller="Product" asp-action="Index">Product</a>
+                                </li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -36,7 +50,9 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3 mb-5">
+            <partial name="_Notification" />
             @RenderBody()
+
         </main>
     </div>
 
