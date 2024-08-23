@@ -21,12 +21,10 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
 
 ## Technologies
 - **Backend:** ASP.NET Core
-- **Frontend:** Razor Pages
+- **Frontend:** Razor Pages 
 - **Database:** SQL Server
 - **ORM:** Entity Framework Core
-- **Authentication:** ASP.NET Identity
-- **Logging:** Serilog
-- **Testing:** xUnit
+- **Authentication:** ASP.NET Core MVC, Razor Pages (for Identity)
 
 ## Requirements
 - [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
