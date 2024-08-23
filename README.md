@@ -50,7 +50,7 @@ Before running the application, add the `deml/appsettings.json` file with your s
   },
   "AllowedHosts": "*"
 }
-
+```
 ## Installation
 
 1. **Clone the Repository:**
