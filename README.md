@@ -20,8 +20,8 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
 - Admin panel for managing products and orders
 
 ## Technologies
-- **Backend:** ASP.NET Core
-- **Frontend:** Razor Pages 
+- **Frontend:** ASP.NET Core MVC, Razor Pages (for Identity)
+- **Backend:** ASP.NET Core (MVC Pattern)
 - **Database:** SQL Server
 - **ORM:** Entity Framework Core
 - **Authentication:** ASP.NET Core MVC, Razor Pages (for Identity)
