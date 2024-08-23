@@ -55,7 +55,7 @@ Before running the application, add the `deml/appsettings.json` file with your s
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/ecommerce-platform.git
+    git clone https://github.com/shrish0/deml.git
     cd ecommerce-platform
     ```
 
