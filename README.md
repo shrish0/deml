@@ -31,6 +31,26 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (local or remote)
 - [Visual Studio](https://visualstudio.microsoft.com/) (optional but recommended)
 
+## Configuration
+
+### appsettings.json
+Before running the application, add the `deml/appsettings.json` file with your specific settings. Below is an example configuration:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=YOUR_SERVER;Database=YOUR_DATABASE;User Id=YOUR_USERNAME;Password=YOUR_PASSWORD;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+
 ## Installation
 
 1. **Clone the Repository:**
@@ -41,6 +61,7 @@ This is a simple e-commerce platform built using .NET for the backend and SQL Se
 
 2. **Set Up the Database:**
    - Update the `appsettings.json` file with your SQL Server connection string.
+   
    - Run the following commands to create and seed the database:
      ```bash
      dotnet ef database update
